@@ -6,6 +6,18 @@ const { handleCommand } = require('./handlers/commandHandler');
 const { handleCallback } = require('./handlers/callbackHandler');
 const { handleText } = require('./handlers/textHandler');
 const { sendDailyReminder } = require('./services/reminderService');
+import express from 'express'
+
+const app = express()
+const PORT = process.env.PORT || 3000
+
+app.get('/', (req, res) => {
+  res.send('Bot is running 🚀')
+})
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
