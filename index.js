@@ -1,12 +1,16 @@
-import 'dotenv/config'
-const TelegramBot = require('node-telegram-bot-api');
-const mongoose = require('mongoose');
-const cron = require('node-cron');
-const { handleCommand } = require('./handlers/commandHandler');
-const { handleCallback } = require('./handlers/callbackHandler');
-const { handleText } = require('./handlers/textHandler');
-const { sendDailyReminder } = require('./services/reminderService');
-import express from 'express'
+import 'dotenv/config';
+import TelegramBot from 'node-telegram-bot-api';
+import mongoose from 'mongoose';
+import cron from 'node-cron';
+import express from 'express';
+
+// O'zingizning handlerlaringizni import qilish
+import { handleCommand } from './handlers/commandHandler.js';
+import { handleCallback } from './handlers/callbackHandler.js';
+import { handleText } from './handlers/textHandler.js';
+import { sendDailyReminder } from './services/reminderService.js';
+
+// Qolgan bot mantiqini bu yerda davom ettiring...
 
 const app = express()
 const PORT = process.env.PORT || 3000
