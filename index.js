@@ -1,4 +1,4 @@
-require('dotenv').config()
+import 'dotenv/config'
 const TelegramBot = require('node-telegram-bot-api');
 const mongoose = require('mongoose');
 const cron = require('node-cron');
